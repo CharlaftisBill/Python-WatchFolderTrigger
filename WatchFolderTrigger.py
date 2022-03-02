@@ -6,8 +6,10 @@ import argparse
 def arg_parser():
     argParser = argparse.ArgumentParser(
         description="This Python script is 'watching' a directory for changes and when that happens it trigers a command.")
-    argParser.add_argument('-d', '--directory', type=str, required=True, help="Is the directory that the script is watching.")
-    argParser.add_argument('-c', '--command', type=str, required=True, help="The system command to run if any change found.")
+    argParser.add_argument('-d', '--directory', type=str, required=True,
+                           help="Is the directory that the script is watching.")
+    argParser.add_argument('-c', '--command', type=str, required=True,
+                           help="The system command to run if any change found.")
 
     return argParser.parse_args()
 
@@ -15,7 +17,7 @@ def arg_parser():
 def main():
     args = arg_parser()
     before = dir_parser(args.directory)
-    dir_watcher(before , args)
+    dir_watcher(before, args)
 
 
 def dir_watcher(before: list, args):
@@ -52,9 +54,8 @@ def dir_parser(path: str):
 
 
 def trigger(command: str):
-    ''' runs teh specified command'''
+    ''' runs the specified command'''
     os.system(command)
-    # print(command)
 
 
 if __name__ == "__main__":

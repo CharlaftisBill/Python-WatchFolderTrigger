@@ -15,3 +15,5 @@ arguments are required:
  python3  WatchFolderTrigger.py -d ./path/to/dir -c 'echo test'
  ```
  
+ ## Notice:
+ This repo is similar to "Bash-WatchFolderTrigger" but written in Python script.
